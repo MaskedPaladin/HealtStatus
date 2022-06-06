@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.healtstatus.Main">
+   <children>
+      <HBox>
+         <children>
+            <Button fx:id="add_menu" onAction="#handleButtonAction" mnemonicParsing="false" text="Add entry" />
+            <Button fx:id="chart_menu" onAction="#handleButtonAction" mnemonicParsing="false" text="Charts" />
+
+            <Button fx:id="mental_mid" onAction="#handleButtonAction" mnemonicParsing="false" text="mental" />
+            <Button fx:id="physic_mid" onAction="#handleButtonAction" mnemonicParsing="false" text="physical" />
+            <Button fx:id="most_eated_food" onAction="#handleButtonAction" mnemonicParsing="false" text="most eated food" />
+            <Button fx:id="best_mental" onAction="#handleButtonAction" mnemonicParsing="false" text="best mental" />
+            <Button fx:id="best_physic" onAction="#handleButtonAction" mnemonicParsing="false" text="best physic" />
+
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

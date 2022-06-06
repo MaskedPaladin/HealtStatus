@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+
+<LineChart xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:id="best_physic_chart" fx:controller="com.example.healtstatus.Menu.SortedByPhysicalMenu">
+  <xAxis>
+    <NumberAxis fx:id="xAxis" label="Date"/>
+  </xAxis>
+  <yAxis>
+    <NumberAxis fx:id="yAxis" label="Physical status"/>
+  </yAxis>
+</LineChart>
