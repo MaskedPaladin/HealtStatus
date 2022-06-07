@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+
+<BarChart id="food_chart" fx:id="food_chart" title="Food" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+  <xAxis>
+    <CategoryAxis id="foods" fx:id="food_axis" label="Foods" side="BOTTOM" />
+  </xAxis>
+  <yAxis>
+    <NumberAxis id="quantity" fx:id="food_quantity_axis" label="Total quantity" side="LEFT" />
+  </yAxis>
+</BarChart>

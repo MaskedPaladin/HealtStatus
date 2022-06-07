@@ -64,11 +64,6 @@ public class Main extends Application {
             stage = (Stage) add_menu.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("add_menu.fxml"));
         }
-        else if(event.getSource()==chart_menu){
-            stage = (Stage) chart_menu.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("chart_menu.fxml"));
-        }
-
         else if(event.getSource()==mental_mid){
             stage = (Stage) mental_mid.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("mental_mid.fxml"));
@@ -79,7 +74,7 @@ public class Main extends Application {
         }
         else if(event.getSource()==most_eated_food){
             stage = (Stage) most_eated_food.getScene().getWindow();
-            root = FXMLLoader.load(getClass().getResource("most_eated_food.fxml"));
+            root = FXMLLoader.load(getClass().getResource("most_eated.fxml"));
         }
         else if(event.getSource()==best_mental){
             stage = (Stage) best_mental.getScene().getWindow();

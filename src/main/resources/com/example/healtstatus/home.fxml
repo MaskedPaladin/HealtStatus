@@ -8,8 +8,6 @@
       <HBox>
          <children>
             <Button fx:id="add_menu" onAction="#handleButtonAction" mnemonicParsing="false" text="Add entry" />
-            <Button fx:id="chart_menu" onAction="#handleButtonAction" mnemonicParsing="false" text="Charts" />
-
             <Button fx:id="mental_mid" onAction="#handleButtonAction" mnemonicParsing="false" text="mental" />
             <Button fx:id="physic_mid" onAction="#handleButtonAction" mnemonicParsing="false" text="physical" />
             <Button fx:id="most_eated_food" onAction="#handleButtonAction" mnemonicParsing="false" text="most eated food" />

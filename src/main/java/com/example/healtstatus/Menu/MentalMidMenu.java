@@ -1,7 +1,7 @@
 package com.example.healtstatus.Menu;
 
 import com.example.healtstatus.Controller.MoodController;
-import com.example.healtstatus.Controller.SortByPhysic;
+import com.example.healtstatus.Controller.SortDateCompare;
 import com.example.healtstatus.Model.Mood;
 import javafx.application.Application;
 import javafx.fxml.FXML;
@@ -14,11 +14,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class SortedByPhysicalMenu extends Application {
+public class MentalMidMenu extends Application {
     @FXML
-    private LineChart<Date, Float> best_physic_chart;
+    private LineChart<Date, Number> best_mental_chart;
     @FXML
-    private NumberAxis x;
+    private NumberAxis xAxis;
     @FXML
     private NumberAxis yAxis;
 
@@ -28,17 +28,18 @@ public class SortedByPhysicalMenu extends Application {
         moodController = new MoodController();
         ArrayList<Mood> all = moodController.load("database.db");
 
-        all.sort(new SortByPhysic());
+        all.sort(new SortDateCompare());
 
         XYChart.Series series = new XYChart.Series();
-        series.setName("Physical sorted");
+        series.setName("Mental mid");
+        int allCount = all.size();
         int counter = 0;
         for(Mood m : all){
             System.out.println(m);
-            series.getData().add(new XYChart.Data(counter, m.getPhysic()));
+            series.getData().add(new XYChart.Data(counter, m.getMental()/allCount));
             counter++;
         }
-        best_physic_chart.getData().add(series);
+        best_mental_chart.getData().add(series);
     }
     @Override
     public void start(Stage stage) throws Exception {

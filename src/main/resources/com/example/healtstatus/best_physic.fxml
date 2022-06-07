@@ -4,7 +4,7 @@
 
 <LineChart xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:id="best_physic_chart" fx:controller="com.example.healtstatus.Menu.SortedByPhysicalMenu">
   <xAxis>
-    <NumberAxis fx:id="xAxis" label="Date"/>
+    <CategoryAxis fx:id="x" label="Date"/>
   </xAxis>
   <yAxis>
     <NumberAxis fx:id="yAxis" label="Physical status"/>
