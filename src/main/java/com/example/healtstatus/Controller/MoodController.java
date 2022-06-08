@@ -23,7 +23,6 @@ public class MoodController {
         }
         catch (Exception e){
             e.printStackTrace();
-            save(new ArrayList<Mood>(),"database.db");
         }
         return null;
     }
