@@ -5,9 +5,11 @@ import com.example.healtstatus.Controller.SortByPhysic;
 import com.example.healtstatus.Main;
 import com.example.healtstatus.Model.Mood;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
@@ -32,6 +34,7 @@ public class SortedByPhysicalMenu implements Initializable {
     @FXML
     private Button back;
     private Stage stage;
+    private Scene scene;
     @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
         MoodController moodController;
@@ -64,5 +67,12 @@ public class SortedByPhysicalMenu implements Initializable {
         Scene scene = new Scene(root);
         this.stage.setScene(scene);
         this.stage.show();
+    }
+    public void back(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("home.fxml"));
+        stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(fxmlLoader.load(),300, 300);
+        stage.setScene(scene);
+        stage.show();
     }
 }

@@ -1,10 +1,13 @@
 package com.example.healtstatus.Menu;
 
 import com.example.healtstatus.Controller.MoodController;
+import com.example.healtstatus.Main;
 import com.example.healtstatus.Model.Mood;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
@@ -12,6 +15,7 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
@@ -30,6 +34,8 @@ public class MostEatedMenu implements Initializable {
     private NumberAxis food_quantity_axis;
 
     private ArrayList<Mood> all;
+    private Stage stage;
+    private Scene scene;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -74,5 +80,12 @@ public class MostEatedMenu implements Initializable {
         for(XYChart.Series e : series){
             food_chart.getData().addAll(e);
         }
+    }
+    public void back(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("home.fxml"));
+        stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(fxmlLoader.load(),300, 300);
+        stage.setScene(scene);
+        stage.show();
     }
 }

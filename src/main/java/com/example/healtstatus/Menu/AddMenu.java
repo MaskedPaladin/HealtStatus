@@ -1,11 +1,13 @@
 package com.example.healtstatus.Menu;
 
 import com.example.healtstatus.Controller.MoodController;
+import com.example.healtstatus.Main;
 import com.example.healtstatus.Model.Mood;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -32,6 +34,8 @@ public class AddMenu extends Application {
     private TextField physic;
     @FXML
     private TextField food;
+    private Scene scene;
+    private Stage stage;
 
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException, ClassNotFoundException {
@@ -79,5 +83,12 @@ public class AddMenu extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
+    }
+    public void back(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("home.fxml"));
+        stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(fxmlLoader.load(),300, 300);
+        stage.setScene(scene);
+        stage.show();
     }
 }

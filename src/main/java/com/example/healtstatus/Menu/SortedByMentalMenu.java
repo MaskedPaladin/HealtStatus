@@ -2,10 +2,13 @@ package com.example.healtstatus.Menu;
 
 import com.example.healtstatus.Controller.MoodController;
 import com.example.healtstatus.Controller.SortByPhysic;
+import com.example.healtstatus.Main;
 import com.example.healtstatus.Model.Mood;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.LineChart;
@@ -30,6 +33,7 @@ public class SortedByMentalMenu implements Initializable {
     @FXML
     private Button back;
     private Stage stage;
+    private Scene scene;
     @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
         MoodController moodController;
@@ -55,12 +59,11 @@ public class SortedByMentalMenu implements Initializable {
         }
         best_mental_chart.getData().add(series);
     }
-    public void back() throws IOException {
-        this.stage = (Stage) back.getScene().getWindow();
-        System.out.println(stage);
-        Parent root = FXMLLoader.load(getClass().getResource("home.fxml"));
-        Scene scene = new Scene(root);
-        this.stage.setScene(scene);
-        this.stage.show();
+    public void back(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("home.fxml"));
+        stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(fxmlLoader.load(),600, 600);
+        stage.setScene(scene);
+        stage.show();
     }
 }
