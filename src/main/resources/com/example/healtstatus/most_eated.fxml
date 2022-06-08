@@ -4,7 +4,7 @@
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 
-<BarChart id="food_chart" fx:id="food_chart" title="Food" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<BarChart id="food_chart" fx:id="food_chart" title="Food" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.healtstatus.Menu.MostEatedMenu">
   <xAxis>
     <CategoryAxis id="foods" fx:id="food_axis" label="Foods" side="BOTTOM" />
   </xAxis>
